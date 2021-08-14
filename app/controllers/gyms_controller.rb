@@ -10,13 +10,13 @@ class GymsController < ApplicationController
 
   def show
     gym = Gym.find(params[:id])
-    render json: gym, status: :ok
+    render json: gym
   end
 
   def update
     gym = Gym.find(params[:id])
     gym.update!(gym_params)
-    render json: gym
+    render json: gym, status: :ok
   end
 
   def destroy
